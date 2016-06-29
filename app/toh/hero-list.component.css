@@ -29,22 +29,13 @@
 //     white-space: nowrap;
 // }
 
-.btn-group, .btn-group-vertical {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.btn .caret, .btn-group>.btn:first-child {
-    margin-left: 0;
-}
-.btn-group-vertical>.btn, .btn-group>.btn {
-    position: relative;
-    float: left;
-}
 .media-control {
     margin-left: 1em;
 }
 .media-control, .media-figure {
     margin-right: 1em;
+}
+
+.note {
+    font-style: italic;
 }
