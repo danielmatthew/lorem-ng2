@@ -5,8 +5,6 @@ import { HeroService } from './hero.service';
 import FilterPipe from './item.filter';
 import { DROPDOWN_DIRECTIVES } from './dropdown';
 import { CollapseDirective } from './collapse';
-// import { ACCORDION_DIRECTIVES } from './accordion';
-
 
 @Component({
   selector: 'hero-list',
@@ -34,15 +32,5 @@ export class HeroListComponent implements OnInit {
                        error =>  this.errorMessage = <any>error);
   }
 
-  addHero (name: string) {
-    if (!name) { return; }
-    this.heroService.addHero(name)
-                     .subscribe(
-                       hero  => this.heroes.push(hero),
-                       error =>  this.errorMessage = <any>error);
-  }
 
-  getSize(item, index){
-    return 18;
-  }
 }
