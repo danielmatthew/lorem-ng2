@@ -12,11 +12,16 @@
 </div>
 
 <div class="col-xs-12">
-  <article *ngFor="let hero of heroes | filter:listFilter.value" class="panel panel-default">
+  <article *ngFor="let hero of heroes;trackBy:hero?.index | filter:listFilter.value" class="panel panel-default">
     <div class="media">
       <img src="http://placehold.it/60x80" alt="" class="media-figure" (click)="isCollapsed = !isCollapsed">
-      <div class="media-body">
-        <span [innerHTML]="hero.citation?.html"></span>
+      <div class="media-body" [ngSwitch]="hero.type">
+        <template ngSwitchCase="ITEM">
+          <span [innerHTML]="hero.citation?.html"></span>
+        </template>
+        <template ngSwitchCase="NOTE">
+          <span [innerHTML]="hero.note?.html" class="note"></span>
+        </template>
       </div>
       <div class="btn-group" dropdown keyboardNav="true">
         <button class="media-control btn btn-link btn-lg" type="button" dropdownToggle>
@@ -34,3 +39,6 @@
     </div>
   </article>
 </div>
+
+
+

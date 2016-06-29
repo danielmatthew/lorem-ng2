@@ -5,6 +5,7 @@ import { HeroService } from './hero.service';
 import FilterPipe from './item.filter';
 import { DROPDOWN_DIRECTIVES } from './dropdown';
 import { CollapseDirective } from './collapse';
+// import { ACCORDION_DIRECTIVES } from './accordion';
 
 
 @Component({
@@ -23,6 +24,8 @@ export class HeroListComponent implements OnInit {
   constructor (private heroService: HeroService) {}
 
   ngOnInit() { this.getHeroes(); }
+
+  public isCollapsed:boolean = true;
 
   getHeroes() {
     this.heroService.getHeroes()
