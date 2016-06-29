@@ -15,7 +15,7 @@ var Observable_1 = require('rxjs/Observable');
 var HeroService = (function () {
     function HeroService(http) {
         this.http = http;
-        this.heroesUrl = 'https://i7fea98uib.execute-api.us-east-1.amazonaws.com/prod/Dev_Random_ListData?limit=2000&total=2000'; // URL to web api
+        this.heroesUrl = 'https://i7fea98uib.execute-api.us-east-1.amazonaws.com/prod/Dev_Random_ListData?limit=500&total=500'; // URL to web api
     }
     HeroService.prototype.getHeroes = function () {
         return this.http.get(this.heroesUrl).map(this.extractData).catch(this.handleError);

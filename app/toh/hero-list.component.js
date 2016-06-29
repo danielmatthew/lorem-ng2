@@ -12,6 +12,8 @@ var ng2_vs_for_1 = require('./ng2-vs-for');
 var core_1 = require('@angular/core');
 var hero_service_1 = require('./hero.service');
 var item_filter_1 = require('./item.filter');
+var dropdown_1 = require('./dropdown');
+var collapse_1 = require('./collapse');
 var HeroListComponent = (function () {
     function HeroListComponent(heroService) {
         this.heroService = heroService;
@@ -38,7 +40,7 @@ var HeroListComponent = (function () {
         core_1.Component({
             selector: 'hero-list',
             templateUrl: 'app/toh/hero-list.component.html',
-            directives: [ng2_vs_for_1.VsFor],
+            directives: [ng2_vs_for_1.VsFor, dropdown_1.DROPDOWN_DIRECTIVES, collapse_1.CollapseDirective],
             providers: [hero_service_1.HeroService],
             pipes: [item_filter_1.default]
         }), 

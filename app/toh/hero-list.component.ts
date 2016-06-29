@@ -3,12 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
 import FilterPipe from './item.filter';
+import { DROPDOWN_DIRECTIVES } from './dropdown';
+import { CollapseDirective } from './collapse';
 
 
 @Component({
   selector: 'hero-list',
   templateUrl: 'app/toh/hero-list.component.html',
-  directives: [ VsFor ],
+  directives: [ VsFor, DROPDOWN_DIRECTIVES, CollapseDirective ],
   providers: [ HeroService ],
   pipes: [ FilterPipe ]
 })

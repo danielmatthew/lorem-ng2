@@ -1,27 +1,36 @@
 <link rel="stylesheet" href="./hero-list.component.css">
-<h1>Angular 2</h1>
 
-<input type="text" placeholder="Type to filter&hellip;" #listFilter (keyup)="0" />
-<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+<section class="page-header">
+  <h1>Angular 2</h1>
+</section>
 
-<br>
+<div class="alert alert-info">An Angular 2 implementation.</div>
+<div class="alert alert-warning" *ngIf="errorMessage">{{errorMessage}}</div>
 
+<div class="form-group">
+  <input class="form-control" type="text" placeholder="Type to filter&hellip;" #listFilter (keyup)="0" />
+</div>
 
+<div class="col-xs-12">
   <article *ngFor="let hero of heroes | filter:listFilter.value" class="panel panel-default">
     <div class="media">
-      <img src="http://placehold.it/60x80" alt="" class="media-figure">
+      <img src="http://placehold.it/60x80" alt="" class="media-figure" (click)="isCollapsed = !isCollapsed">
       <div class="media-body">
         <span [innerHTML]="hero.citation?.html"></span>
       </div>
-      <div class="btn-group">
-        <button class="media-control btn btn-link btn-lg">
+      <div class="btn-group" dropdown keyboardNav="true">
+        <button class="media-control btn btn-link btn-lg" type="button" dropdownToggle>
           <i class="fa fa-ellipsis-v"></i>
         </button>
-        <ul class="dropdown-menu" role="menu">
+        <ul class="dropdown-menu pull-right" role="menu">
           <li><a href="">One</a></li>
           <li><a href="">Two</a></li>
           <li><a href="">Three</a></li>
         </ul>
       </div>
     </div>
+    <div class="lol" [collapse]="isCollapsed">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptatibus placeat laboriosam laborum fuga repellat hic dicta, ducimus officia, possimus, facilis magnam ad eligendi inventore assumenda eum fugiat veritatis. Eum.
+    </div>
   </article>
+</div>
