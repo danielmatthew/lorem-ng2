@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="./hero-list.component.css">
+<h1>Angular 2</h1>
+
+<input type="text" placeholder="Type to filter&hellip;" #listFilter (keyup)="0" />
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+
+<br>
+
+
+  <article *ngFor="let hero of heroes | filter:listFilter.value" class="panel panel-default">
+    <div class="media">
+      <img src="http://placehold.it/60x80" alt="" class="media-figure">
+      <div class="media-body">
+        <span [innerHTML]="hero.citation?.html"></span>
+      </div>
+      <div class="btn-group">
+        <button class="media-control btn btn-link btn-lg">
+          <i class="fa fa-ellipsis-v"></i>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="">One</a></li>
+          <li><a href="">Two</a></li>
+          <li><a href="">Three</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
